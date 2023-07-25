@@ -1,0 +1,81 @@
+h1,
+h2 {
+  font-family: Lato;
+}
+
+[aria-label] {
+  position: relative;
+}
+
+.kwd.active {
+  border: 1px dashed #355789 !important;
+  padding: 3.5px;
+}
+
+.kwd[data-delimt]:not(:last-child)::after {
+  content: attr(data-delimt) !important;
+}
+
+.kwd[aria-label].active::before {
+  display: block;
+  content: attr(aria-label);
+  position: absolute;
+  top: -4px;
+  left: 7px;
+  z-index: 5000;
+  pointer-events: none;
+  padding: 0 5px;
+  line-height: 7px;
+  white-space: nowrap;
+  text-decoration: none;
+  text-indent: 0;
+  overflow: visible;
+  font-size: 0.75em;
+  font-weight: normal;
+  color: #003a90;
+  background-color: white;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+/* Accordion Styles */
+.accordion {
+  margin: auto;
+}
+
+/* The handle */
+.handle {
+  position: relative;
+}
+
+/* The label */
+.handle label {
+  display: block;
+}
+
+/* The hidden content */
+.content {
+  overflow: hidden;
+}
+
+/* The input */
+input[type='radio'] {
+  position: absolute;
+}
+
+/* Hide the input */
+input[type='radio'] {
+  opacity: 0;
+}
+
+/* Show the content */
+input[type='radio']:checked ~ .content {
+  max-height: 100%;
+  transition: max-height 0.5s;
+}
+
+/* Hide the content */
+input[type='radio'] ~ .content {
+  max-height: 0;
+  transition: max-height 0.5s;
+}
